@@ -1,0 +1,47 @@
+.app-container {
+  padding: 2rem;
+  max-width: 520px;
+  margin: 4rem auto; /* mayor separación vertical */
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* más profundidad */
+  transition: var(--transition);
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 2rem; /* más espacio debajo */
+  color: var(--color-primary-dark);
+  font-size: 2.25rem; /* un poco más grande */
+  font-weight: bold;
+}
+
+
+.theme-toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary-dark);
+  border-radius: var(--border-radius);
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary-dark);
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-button:hover .theme-toggle-icon {
+  transform: rotate(15deg);
+}

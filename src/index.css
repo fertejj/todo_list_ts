@@ -1,0 +1,53 @@
+:root {
+  --color-bg: #fdf6f0;
+  --color-surface: #ffffff;
+  --color-primary: #d96c06;
+  --color-primary-dark: #a34700;
+  --color-contrast: #2e2e3a;
+  --color-text: #333;
+  --color-muted: #666;
+  --color-white: #fff;
+  --border-radius: 8px;
+  --transition: 0.25s ease;
+}
+
+/* 🌙 Modo oscuro */
+body.dark {
+  --color-bg: #1c1c1c;
+  --color-surface: #2a2a2a;
+  --color-primary: #ff8c42;
+  --color-primary-dark: #ff6f1a;
+  --color-text: #f0f0f0;
+  --color-muted: #aaa;
+  --color-contrast: #fff;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--color-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text);
+  line-height: 1.5;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+
+input, button {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
