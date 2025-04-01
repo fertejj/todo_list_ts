@@ -1,50 +1,96 @@
+/* 📋 Contenedor de la lista */
 .todo-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .todo-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--bg-color-variant);
-    padding: 0.8rem 1rem;
-    margin-bottom: 0.6rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s;
-  }
-  
-  .todo-text {
-    flex: 1;
-    cursor: pointer;
-    font-size: 1rem;
-    color: var(--text-color);
-  }
-  
-  .todo-item.done .todo-text {
-    text-decoration: line-through;
-    opacity: 0.6;
-  }
-  
-  .delete-button {
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #e74c3c;
-    margin-left: 1rem;
-    transition: transform 0.2s;
-  }
-  
-  .delete-button:hover {
-    transform: scale(1.2);
-  }
-  
-  .empty-message {
-    text-align: center;
-    color: var(--text-muted-color);
-    margin-top: 2rem;
-    font-style: italic;
-  }
-  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* 🧩 Ítem individual */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+/* ✅ Parte izquierda: check + texto */
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  cursor: pointer;
+}
+
+/* 🔘 Check */
+.todo-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition);
+}
+
+/* 📝 Texto de la tarea */
+.todo-text {
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: color var(--transition), opacity var(--transition);
+  word-break: break-word;
+}
+
+
+/* ☑️ Tarea completada — aspecto más claro y limpio */
+.todo-item.done {
+  background-color: rgba(76, 175, 80, 0.08); /* verde MUY suave */
+  border-left: 4px solid #4caf50;
+  opacity: 1;
+}
+
+.todo-item.done .todo-text {
+  color: #6b6b6b; /* gris claro legible */
+  text-decoration: line-through;
+  opacity: 1;
+}
+
+.todo-item.done .todo-check-icon {
+  color: #4caf50;
+}
+
+
+.todo-item.done:hover {
+  transform: scale(1.01);
+}
+
+/* 🗑 Botón de eliminar */
+.delete-button {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: transform var(--transition), color var(--transition);
+}
+
+.delete-button:hover {
+  color: #e74c3c;
+  transform: scale(1.2);
+}
+
+/* 📭 Mensaje cuando no hay tareas */
+.empty-message {
+  text-align: center;
+  color: var(--color-muted);
+  margin-top: 2rem;
+  font-style: italic;
+}
