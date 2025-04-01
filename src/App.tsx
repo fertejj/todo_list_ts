@@ -23,10 +23,9 @@ function App() {
     localStorage.setItem(LOCAL_TODO_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  // Aplicar y guardar modo oscuro
+  // Aplicar clase dark al <html> y guardar estado
   useEffect(() => {
-    const root = document.documentElement; // <html>
-    root.classList.toggle("dark", darkMode);
+    document.documentElement.classList.toggle("dark", darkMode);
     localStorage.setItem(LOCAL_THEME_KEY, JSON.stringify(darkMode));
   }, [darkMode]);
 
@@ -55,7 +54,10 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1 className="app-title">Todo List</h1>
-        <button className="theme-toggle-button" onClick={() => setDarkMode(!darkMode)}>
+        <button
+          className="theme-toggle-button"
+          onClick={() => setDarkMode(!darkMode)}
+        >
           <span className="theme-toggle-icon">{darkMode ? "☀️" : "🌙"}</span>
           {darkMode ? "Claro" : "Oscuro"}
         </button>

@@ -1,22 +1,28 @@
 .app-container {
   padding: 2rem;
-  max-width: 520px;
-  margin: 4rem auto; /* mayor separación vertical */
+  max-width: 500px;
+  margin: 4rem auto;
   background-color: var(--color-surface);
   border-radius: var(--border-radius);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* más profundidad */
-  transition: var(--transition);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* 🔹 Encabezado */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .app-title {
-  text-align: center;
-  margin-bottom: 2rem; /* más espacio debajo */
-  color: var(--color-primary-dark);
-  font-size: 2.25rem; /* un poco más grande */
+  font-size: 2rem;
   font-weight: bold;
+  color: var(--color-primary-dark);
 }
 
-
+/* 🌗 Botón de tema */
 .theme-toggle-button {
   display: flex;
   align-items: center;
@@ -28,7 +34,7 @@
   padding: 0.4rem 0.75rem;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: all var(--transition);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .theme-toggle-button:hover {
