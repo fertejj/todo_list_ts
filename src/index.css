@@ -1,4 +1,6 @@
+/* 🎨 Variables de tema */
 :root {
+  /* Colores claros */
   --color-bg: #fdf6f0;
   --color-surface: #ffffff;
   --color-primary: #d96c06;
@@ -7,29 +9,33 @@
   --color-text: #333;
   --color-muted: #666;
   --color-white: #fff;
+
+  /* Diseño */
   --border-radius: 8px;
   --transition: 0.25s ease;
 }
 
 /* 🌙 Modo oscuro */
-body.dark {
+html.dark {
   --color-bg: #1c1c1c;
   --color-surface: #2a2a2a;
   --color-primary: #ff8c42;
   --color-primary-dark: #ff6f1a;
   --color-text: #f0f0f0;
   --color-muted: #aaa;
-  --color-contrast: #fff;
+  --color-contrast: #ffffff;
 }
 
-/* Reset básico */
+/* 🔄 Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+/* 📄 HTML & Body */
+html,
+body {
   height: 100%;
   background-color: var(--color-bg);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,8 +44,9 @@ html, body {
   transition: background-color var(--transition), color var(--transition);
 }
 
-
-input, button {
+/* 🧩 Elementos comunes */
+input,
+button {
   font-family: inherit;
 }
 
@@ -50,4 +57,10 @@ button {
 ul {
   list-style: none;
   padding: 0;
+}
+
+/* ⛔ Asegura que html no tenga fondo blanco en modo oscuro */
+html {
+  background-color: var(--color-bg);
+  transition: background-color var(--transition);
 }

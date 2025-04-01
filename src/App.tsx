@@ -18,14 +18,15 @@ function App() {
     return localStorage.getItem(LOCAL_THEME_KEY) === "true";
   });
 
-  // Persistir todos
+  // Guardar todos en localStorage
   useEffect(() => {
     localStorage.setItem(LOCAL_TODO_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  // Persistir modo oscuro + cambiar clase al body
+  // Aplicar y guardar modo oscuro
   useEffect(() => {
-    document.body.classList.toggle("dark", darkMode);
+    const root = document.documentElement; // <html>
+    root.classList.toggle("dark", darkMode);
     localStorage.setItem(LOCAL_THEME_KEY, JSON.stringify(darkMode));
   }, [darkMode]);
 
